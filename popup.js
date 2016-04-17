@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
   startButton.addEventListener('click', function() {
       
       //random date in RFC3339 2010-01-01T00:00:00:Z format
-      var dateBefore = randomDate(new Date(2012, 0, 1), new Date());
+      var dateBefore = randomDate(new Date(2014, 0, 1), new Date());
       var normalizeDate = ISODateString(dateBefore);
       
       console.log(normalizeDate);
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       var url = "";
       var xhr = new XMLHttpRequest();
-      xhr.open('GET', "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&order=viewCount&publishedBefore ="+normalizeDate+"&q=movie+trailer&safeSearch=strict&type=video&videoEmbeddable=true&fields=items(id%2Ckind%2Csnippet)&key="+APIKEY, true);
+      xhr.open('GET', "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCi8e0iOVk1fEOogdfu4YgfA&maxResults=50&publishedBefore ="+normalizeDate+"&q=movie+trailer&type=video&videoEmbeddable=true&fields=items(id%2Ckind%2Csnippet)&key="+APIKEY, true);
       xhr.send();
       xhr.onreadystatechange = processRequest;
       
